@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
         <h1>Text ({{textValue}})</h1>
         <input #textbox type="text" [(ngModel)]="textValue" required> 
         <button (click)="logText(textbox.value)">Update Log</button>
+        <button (click)="textValue=''">Clear</button>
         
         <h2>Template Reference Variable</h2>
         Type: '{{textbox.type}}', required: '{{textbox.hasAttribute('required')}}',
