@@ -1,35 +1,25 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'text',
+    selector: 'text-box',
     template: `
         <h1>Text ({{textValue}})</h1>
-        <p>
-            <input ref-text type="text" [(ngModel)]="textValue" required> 
-            <button (click)="logText(text.value)">Update Log</button>
-        </p>
-        <p>Template Reference Variable</p>
-        <p>
-            Value: {{text.value}}, required: {{text.required}},
-            type: {{text.type}}
-        </p>
+        <input #textbox type="text" [(ngModel)]="textValue" required> 
+        <button (click)="logText(textbox.value)">Update Log</button>
         
-        <h2>Log</h2>
-        <p><button (click)="clearLog()">clear</button></p>
-        <pre>{{log}}</pre>`,
-    styles: ['.selected {color: ForestGreen;}']
+        <h2>Template Reference Variable</h2>
+        Type: '{{textbox.type}}', required: '{{textbox.hasAttribute('required')}}',
+        upper: '{{textbox.value.toUpperCase()}}'
+        
+        <h2>Log <button (click)="log=''">Clear</button></h2>
+        <pre>{{log}}</pre>`
 })
 export class TextComponent {
 
+    private textValue = "initial value";
     private log: string ='';
-    private textValue = "text box";
 
     private logText(value: string): void {
         this.log += `Text changed to '${value}'\n`
     }
-
-    private clearLog() {
-        this.log = '';
-    }
-
 }

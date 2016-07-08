@@ -10,7 +10,7 @@ import { TextComponent } from "./text.component";
 @Component({
     selector: 'app',
     template: `
-        <text *ngIf="showSection('text')"></text>
+        <text-box *ngIf="showSection('text-box')"></text-box>
         <text-area *ngIf="showSection('text-area')"></text-area>
         <checkbox *ngIf="showSection('checkbox')"></checkbox>
         <radio *ngIf="showSection('radio')"></radio>
