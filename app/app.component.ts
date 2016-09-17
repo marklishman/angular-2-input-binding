@@ -1,11 +1,4 @@
-import { Component } from '@angular/core';
-
-import { AttributeComponent } from "./attribute.component";
-import { CheckboxComponent } from "./checkbox.component";
-import { DropDownComponent } from "./drop-down.component";
-import { RadioComponent } from "./radio.component";
-import { TextAreaComponent } from "./text-area.component";
-import { TextComponent } from "./text.component";
+import { Component } from "@angular/core";
 
 @Component({
     selector: 'app',
@@ -16,15 +9,7 @@ import { TextComponent } from "./text.component";
         <radio *ngIf="showSection('radio')"></radio>
         <drop-down *ngIf="showSection('drop-down')"></drop-down>
         <attribute *ngIf="showSection('attribute')"></attribute>
-        `,
-    directives: [
-        AttributeComponent,
-        CheckboxComponent,
-        DropDownComponent,
-        RadioComponent,
-        TextAreaComponent,
-        TextComponent
-    ]
+        `
 })
 export class AppComponent {
 
